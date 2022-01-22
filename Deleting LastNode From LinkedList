@@ -1,0 +1,56 @@
+class Node{
+	int data;
+	Node next;
+	Node(int x){
+		data=x;
+		next=null;
+	}
+}
+public class Test {
+	public static void main(String[] args){
+		Node head=null;
+		head=insertBegin(head,10);
+		head=insertBegin(head,20);
+		head=insertBegin(head,30);
+		head=insertBegin(head,40);
+		//printig linkedlist
+	    printLinkedList(head);
+	    deleteLastNode(head);
+	    System.out.println("---After Deleting Last Node----");
+	    printLinkedList(head);
+	}
+	public static void printLinkedList(Node head){
+		if(head==null){
+			return;
+		}
+		Node curr=head;
+		while(curr !=null){
+			
+			System.out.println(curr.data);
+			curr=curr.next;
+		}
+	}
+	public static Node insertBegin(Node head,int x){
+		Node temp=new Node(x);
+		if(head==null){
+			return temp;
+		}else{
+			temp.next=head;
+			
+		}
+		return temp;
+	}
+	public static Node deleteLastNode(Node head){
+		if(head==null){
+			return null;
+		}
+	if(head.next==null){
+		return null;
+	}	
+			Node temp=head;
+			while(temp.next.next !=null){
+				temp=temp.next;
+			}
+			temp.next=null;
+     		return head;
+	}
