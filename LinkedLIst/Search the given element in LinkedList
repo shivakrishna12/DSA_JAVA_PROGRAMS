@@ -1,0 +1,68 @@
+package LinkedListPrograms;
+
+class Node{
+	int data;
+	Node next;
+	Node(int x){
+		data=x;
+		next=null;
+	}
+}
+
+public class SearchNode {
+	public static void main(String[] args){
+		Node head=null;
+		head=insertBegin(head,10);
+		head=insertBegin(head,20);
+		head=insertBegin(head,30);
+		head=insertBegin(head,40);
+		head=insertBegin(head,50);
+		head=insertBegin(head,60);
+		printLinkedList(head);
+		System.out.println(searchNode(head,30));
+		System.out.println(searchNodeIndex(head,40));
+	}
+	public static void  printLinkedList(Node head){
+			Node curr=head;
+			while(curr !=null){
+				System.out.println(curr.data);
+				curr=curr.next;
+		}
+	}
+public static Node insertBegin(Node head,int data){
+	Node temp=new Node(data);
+	if(head==null){
+		return temp;
+	}
+	temp.next=head;
+	return temp;
+}
+public static boolean searchNode(Node head,int  X){
+	if(head==null){
+		return false;
+	}
+	Node curr=head;
+	while(curr !=null){
+		if(X==curr.data){
+			return true;
+		}
+		curr=curr.next;
+	}
+	return false;
+}
+public static int  searchNodeIndex(Node head,int  X){
+	if(head==null){
+		return -1;
+	}
+	Node curr=head;
+	int count=1;
+	while(curr !=null){
+		if(X==curr.data){
+			return count;
+		}
+		curr=curr.next;
+		count++;
+	}
+	return -1;
+}
+}
