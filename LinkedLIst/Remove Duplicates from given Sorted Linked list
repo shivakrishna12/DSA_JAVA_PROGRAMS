@@ -1,0 +1,52 @@
+public class RemoveDuplicatesFromLL {
+	public static void main(String[] args) {
+		Node head = new Node(10);
+		head.next = new Node(20);
+		head.next.next = new Node(20);
+		head.next.next.next = new Node(30);
+		head.next.next.next.next = new Node(30);
+		head.next.next.next.next = new Node(50);
+		printLinkedlist(head);
+		removeDuplicates(head);
+		System.out.println("---------------------------");
+		printLinkedlist(head);
+	}
+
+	public static void printLinkedlist(Node head) {
+		if (head == null)
+			System.out.println("");
+		Node curr = head;
+		while (curr != null) {
+			System.out.println(curr.data);
+			curr = curr.next;
+		}
+	}
+
+	public static Node removeDuplicates(Node head) {
+		Node curr = head;
+		while (curr.next != null) {
+			if (curr.data == curr.next.data) {
+				curr.next = curr.next.next;
+			} else {
+				curr = curr.next;
+			}
+		}
+		return head;
+	}
+
+}
+
+
+
+Output::
+-----------
+10
+20
+20
+30
+50
+---------------------------
+10
+20
+30
+50
