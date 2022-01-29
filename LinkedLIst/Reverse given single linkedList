@@ -1,0 +1,29 @@
+package LinkedlistPrograms;
+
+public class ReverseLL {
+	public static void main(String[] args) {
+		Node head=new Node(10);
+		head.next=new Node(20);
+		head.next.next=new Node(30);
+		head.next.next.next=new Node(40);
+		System.out.println(reverseLinkedList(head).data);
+	}
+
+	
+	public static Node reverseLinkedList(Node head) {
+		if(head.next==null) {return head;}
+		
+		Node curr=head;
+		Node previous=null;
+		while(curr!=null) {
+			Node next=curr.next;
+			curr.next=previous;
+			previous=curr;
+			curr=next;
+		}
+		return previous;
+	}
+}
+
+output::
+-------------
