@@ -1,0 +1,25 @@
+public class MidElement {
+	public static void main(String[] args){
+		Node head=new Node(10);
+		head.next=new Node(20);
+		head.next.next=new Node(30);
+		head.next.next.next=new Node(40);
+		head.next.next.next.next=new Node(50);
+		head.next.next.next.next.next=new Node(60);
+		head.next.next.next.next.next.next=new Node(70);
+		System.out.println(findMidElement(head));
+	}
+	public static int findMidElement(Node head){
+		if(head==null){ return -1;}
+		Node lowPointer=head;
+		Node fastPointer=head;
+		while(fastPointer !=null && fastPointer.next !=null){
+			lowPointer=lowPointer.next;
+			fastPointer=fastPointer.next.next;
+		}
+		return lowPointer.data;
+	}
+
+}
+
+Output : 40
