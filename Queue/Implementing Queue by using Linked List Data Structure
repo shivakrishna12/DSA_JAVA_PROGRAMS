@@ -1,0 +1,79 @@
+package queue;
+
+class Node {
+	int data;
+	Node next;
+
+	Node(int x) {
+		data = x;
+		next = null;
+	}
+}
+class MyQueue {
+	Node front, rear;
+	// Function to push an element into the queue.
+	void push(int a) {
+		Node rearNode = new Node(a);
+		if (front == null) {
+			front = rearNode;
+			rear = rearNode;
+		} else {
+			rear.next = rearNode;
+			rear = rearNode;
+		}
+	}
+	// Function to pop front element from the queue.
+	int pop() {
+		if (front == null) {
+			return -1;
+		}
+		int data = front.data;
+		front = front.next;
+		return data;
+	}
+//get the Size of the Queue
+	int size() {
+		if (front == null) {
+			return -1;
+		}
+		Node curr = front;
+		int count = 1;
+		while (curr.next != null) {
+			curr = curr.next;
+			count++;
+		}
+
+		return count;
+	}
+}
+
+public class ImpQueueWIthLL {
+	public static void main(String[] args) {
+		MyQueue mq = new MyQueue();
+		mq.push(10);
+		System.out.println("size:::" + mq.size());
+		mq.push(20);
+		System.out.println("size:::" + mq.size());
+		mq.push(30);
+		System.out.println("size:::" + mq.size());
+		mq.push(40);
+		System.out.println("size:::" + mq.size());
+		System.out.println(mq.pop());
+		System.out.println(mq.pop());
+		System.out.println(mq.pop());
+		System.out.println(mq.pop());
+		System.out.println(mq.pop());
+	}
+}
+
+
+output :::
+size:::1
+size:::2
+size:::3
+size:::4
+10
+20
+30
+40
+-1
