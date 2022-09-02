@@ -4,8 +4,8 @@ public class ReverseArray{
 	
 	public static void main(String[] args){
 		int[] array=new int[]{10,20,15,3,12,40};
-		System.out.println("dfdfdfdfdffdf");
-		System.out.println(Arrays.toString(reverse(array)));
+		System.out.println("Original Array ::"+Arrays.toString(array));
+		System.out.println("reversed Array ::"+Arrays.toString(reverse(array)));
 			}
 	public static int[] reverse(int[] array){
 		int start=0;
