@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.awt.List;
 
-public class LinkedListImp {
+ class LinkedListImp {
 	
 	Node head;
 	public static void main(String[] args){
