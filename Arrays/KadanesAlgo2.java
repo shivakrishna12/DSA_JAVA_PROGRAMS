@@ -1,3 +1,6 @@
+//kadanes algorithm ---before https://www.enjoyalgorithms.com/blog/maximum-subarray-sum 
+
+
 public class KadanesAlgo2 {
     public static void main(String[] args){
         int[] nums={-3,2,-1,4,-2};
