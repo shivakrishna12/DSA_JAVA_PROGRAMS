@@ -1,4 +1,4 @@
-//this is actual kadanes algorithm, other kadanes java files are brutforce waysss
+//this is actual kadanes algorithm, other kadanes java files are brutforce wayssss
 public class KadanesAlgo3 {
     public static void main(String[] args) {
         int[] nums = { -3, 2, -1, 4, -2 };
