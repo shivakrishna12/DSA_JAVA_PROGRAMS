@@ -9,7 +9,7 @@ char letter='c';
 
 int total=nareshMarks/shivaMarks;
 System.out.println(total);
-
+int c=ArraysDemo.multiplication(11, 12);
 }
 
 
