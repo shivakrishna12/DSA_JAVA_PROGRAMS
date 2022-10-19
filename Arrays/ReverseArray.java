@@ -9,7 +9,7 @@ public class ReverseArray{
 	public static int[] reverse(int[] array){
 		int start=0;
 		int end=array.length-1;
-		
+	
 		while(start <=end){		
 			int temp=array[start];
 			array[start]=array[end];
